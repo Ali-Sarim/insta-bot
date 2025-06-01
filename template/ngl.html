@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Send Me a Message</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      max-width: 400px;
+      width: 100%;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    input, textarea {
+      background: rgba(255,255,255,0.9);
+      color: #333;
+    }
+    button {
+      background-color: #00c6ff;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0079ff;
+    }
+  </style>
+  <script>
+    // Secret access for you
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("me") === "true") {
+      window.location.href = "https://www.instagram.com/alisarim5437"; // Change to your actual landing page
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>Send me a secret message 👀</h2>
+    <form action="https://formsubmit.co/alisarim5437@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="name" placeholder="Your name (optional)">
+      <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</body>
+</html>
